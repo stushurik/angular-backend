@@ -1,5 +1,6 @@
 'use strict';
 
+var URL_PREFIX = "static/app/";
 
 // Declare app level module which depends on filters, and services
 angular.module('ngTest', [
@@ -14,6 +15,10 @@ config(
 
     ['$routeProvider',
     function($routeProvider) {
+
+        $routeProvider.when('/', {templateUrl: URL_PREFIX + 'partials/about_me.html', controller: 'IndexController'});
+
+        $routeProvider.otherwise({redirectTo: '/'});
 
     }]
 );

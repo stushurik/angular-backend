@@ -1,0 +1,24 @@
+
+<table>
+    <tr>
+        <td>First Name</td> <td>{{ firstName }}</td>
+    </tr>
+    <tr>
+        <td>Last Name</td> <td>{{ lastName }}</td>
+    </tr>
+    <tr>
+        <td>Date of birth</td> <td>{{ dob | date:'yyyy-MM-dd' }}</td>
+    </tr>
+    <tr>
+        <td>Bio</td> <td>{{ bio }}</td>
+    </tr>
+    <tr>
+        <td>Contacts</td>
+        <td>
+            <ul>
+              <li ng-repeat="contact in contacts">{{ contact }}</li>
+            </ul>
+        </td>
+    </tr>
+    
+</table>

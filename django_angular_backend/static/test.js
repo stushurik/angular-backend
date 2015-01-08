@@ -37,7 +37,7 @@ describe('IndexController', function() {
     it('Expect correct Bio in controller', function() {
       var $scope = {};
       $controller('IndexController', { $scope: $scope });
-      expect($scope.bio).toEqual('student, 22 years old web-dev');
+      expect($scope.bio).toEqual('student, 22 years, web-dev');
     });
 
     it('Expect correct Contacts in controller', function() {
