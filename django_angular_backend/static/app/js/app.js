@@ -8,7 +8,7 @@ angular.module('ngTest', [
   'ngTest.filters',
   'ngTest.services',
   'ngTest.directives',
-  'ngTest.controllers',
+  'ngTest.controllers'
 ]).
 config(
 

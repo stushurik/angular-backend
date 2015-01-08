@@ -154,9 +154,22 @@ LOGGING = {
     }
 }
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'django_angular_backend.app.context_processor.js_testing'
+)
+
 # Tastypie settings
 API_LIMIT_PER_PAGE = 1000
 TASTYPIE_ALLOW_MISSING_SLASH = True
 TASTYPIE_DEFAULT_FORMATS = ['json', ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+IS_JS_TEST = os.environ.get('JS_TEST', False)
