@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
-  <head>
+
+<html lang="en" ng-app="ngTest" >
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ngTest</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Angular app</title>
+    <link rel="stylesheet/less" type="text/css" href="{% static 'app/css/styles.less' %}" />
 
-    <script type="text/javascript" src="{% static "test.js" %}"></script>
+    <script>
+    less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "комментарий",
+        relativeUrls: false,
+        rootpath: "css/"
+    };
+    </script>
 
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-  </body>
+    <script src="{% static 'app/lib/less-1.7.3.min.js' %}"></script>
+
+    <script src="{% static 'app/lib/angular/angular.js' %}"></script>
+    <script src="{% static 'app/lib/angular/angular-resource.js' %}"></script>
+    <script src="{% static 'app/lib/angular-route/angular-route.js' %}"></script>
+    <script src="{% static 'app/lib/angular-mocks/angular-mocks.js' %}"></script>
+
+    <script src="{% static 'app/js/utils.js' %}"></script>
+    <script src="{% static 'app/js/app.js' %}"></script>
+    <script src="{% static 'app/js/services.js' %}"></script>
+    <script src="{% static 'app/js/controllers.js' %}"></script>
+    <script src="{% static 'app/js/filters.js' %}"></script>
+    <script src="{% static 'app/js/directives.js' %}"></script>
+
+</head>
+<body>
+
+
+
+
+</body>
 </html>
