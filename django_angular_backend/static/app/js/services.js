@@ -2,7 +2,21 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
 var app = angular.module('ngTest.services', ['ngResource']);
+
+app.factory(
+
+    'Contact',
+    ['$resource',
+    function($resource){
+
+        return $resource('api/v1/contact', {}, {
+          get: {
+              method:'GET',
+              params:{}
+
+          }
+        });
+    }]
+
+);

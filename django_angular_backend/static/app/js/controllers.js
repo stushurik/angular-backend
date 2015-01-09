@@ -23,5 +23,39 @@ angular.module('ngTest.controllers', ['ngRoute'])
 
 
         }]
+).controller(
+
+    "ContactsController",
+    ['$scope', '$routeParams', '$location', 'Contact',
+        function ($scope, $routeParams, $location, Contact){
+
+            $scope.add = function(a,b){
+                return a + b;
+            };
+
+            $scope.sub = function(a,b){
+                return a - b;
+            };
+
+            $scope.search = function(operator){
+
+                $location.search({limit: $scope.limit, offset: operator($scope.offset, $scope.limit)})
+
+            };
+
+            $scope.contacts = [];
+            $scope.error = false;
+
+            $scope.limit = $routeParams.hasOwnProperty('limit') ? $routeParams.limit : 5;
+            $scope.offset = $routeParams.hasOwnProperty('offset') ? $routeParams.offset : 0;
+
+            Contact.get({limit: $scope.limit, offset: $scope.offset}, function (response) {
+                $scope.contacts = response.objects;
+                $scope.meta = response.meta;
+            }, function (response) {
+                $scope.error = true;
+            });
+
+        }]
 );
 

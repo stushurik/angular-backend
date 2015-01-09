@@ -1,0 +1,29 @@
+
+<h4 class="title">Contacts</h4>
+
+<a ng-class="{'pointer enable': meta.previous, 'pointer disable': !meta.previous}" ng-click="meta.previous && search(sub)">previous</a>
+
+<table id="contacts" class="align-left">
+
+    <tr>
+
+        <td>Name</td>
+        <td>Email</td>
+        <td>Cell phone</td>
+        <td>Landline</td>
+
+    </tr>
+
+    <tr ng-repeat="contact in contacts">
+
+        <td>{{ contact.first_name }} {{ contact.last_name }}</td>
+        <td>{{ contact.email || '-' }}</td>
+        <td>{{ contact.cellphone_number || '-' }}</td>
+        <td>{{ contact.landline || '-'}}</td>
+
+
+    </tr>
+
+</table>
+
+<a ng-class="{'pointer enable': meta.next, 'pointer disable': !meta.next}" ng-click="meta.next && search(add)">next</a>

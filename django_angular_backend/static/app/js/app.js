@@ -16,7 +16,10 @@ config(
     ['$routeProvider',
     function($routeProvider) {
 
-        $routeProvider.when('/', {templateUrl: URL_PREFIX + 'partials/about_me.html', controller: 'IndexController'});
+        $routeProvider.when('/',
+            {templateUrl: URL_PREFIX + 'partials/about_me.html', controller: 'IndexController'});
+        $routeProvider.when('/contacts',
+            {templateUrl: URL_PREFIX + 'partials/contacts.html', controller: 'ContactsController', reloadOnSearch: true});
 
         $routeProvider.otherwise({redirectTo: '/'});
 
